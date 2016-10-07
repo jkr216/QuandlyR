@@ -68,8 +68,9 @@ QuandlyR <- function() {
         data <- Quandl(inst,
                        start_date = format(input$dateRange[1]),
                        end_date = format(input$dateRange[2]), 
-                       type = 'xts', 
-                       frequency = as.character(input$frequency))
+                       type = 'xts' 
+                       #frequency = as.character(input$frequency)
+                       )
         assign(inst, data, .GlobalEnv)
     })
     observeEvent(input$run, {result()})
