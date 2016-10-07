@@ -12,6 +12,7 @@ QuandlyR <- function() {
   requireNamespace("shiny")
   requireNamespace("miniUI")
   requireNamespace("Quandl")
+  requireNamespace("zoo")
   requireNamespace("stringr")
 
   #### 1 - UI
