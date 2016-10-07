@@ -1,0 +1,4 @@
+Name: QuandlyR
+Description: Download financial data from Quandl
+Binding: QuandlyR
+Interactive: true

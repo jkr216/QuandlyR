@@ -1,0 +1,11 @@
+Package: fredlyR
+Type: Package
+Title: fredlyR
+Version: 0.1.0
+Author: Jonathan Regenstein
+Maintainer: Jonathan Regenstein <jonathan.regenstein@rstudio.com>
+Imports: shiny, miniUI, xts, zoo, Quandl, stringr
+Description: This initial version is a wrapper of the Quandl package.
+License: MIT
+LazyData: TRUE
+RoxygenNote: 5.0.1
