@@ -1,14 +1,14 @@
-#' fredlyR is an RStudio addin designed to simplify the process of downloading data from Fred.
+#' QuandlyR is an RStudio addin designed to simplify the process of downloading data from Fred.
 #' This initial version is of the Quandl package.
 #' @author Jonathan Regenstein
 #' @return Return either a csv file per instrument or a data frame. The csv file is stored in the working directory and the data frame in the globalenv.
-#' @title fredlyR 
-#' @export
+#' @title QuandlyR 
+#' @export 
 #' @import shiny miniUI xts zoo Quandl
 #' @seealso \code{Quandl}
 #' @seealso \code{shiny}
 
-fredlyR <- function() {
+QuandlyR <- function() {
   requireNamespace("shiny")
   requireNamespace("miniUI")
   requireNamespace("Quandl")
@@ -78,7 +78,7 @@ fredlyR <- function() {
   #### 3 - RUN GADGET
   runGadget(ui,
             server,
-            viewer = dialogViewer("fredlyR", width = 330, height = 420))
+            viewer = dialogViewer("QuandlyR", width = 330, height = 420))
 }
 
 
