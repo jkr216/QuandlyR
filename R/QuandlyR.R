@@ -22,7 +22,7 @@ QuandlyR <- function() {
     miniTabstripPanel(
       miniTabPanel("Main",icon = icon("download"),
                    miniContentPanel(
-                     textInput("api_key", "your Quandl api key", " "),
+                     ##textInput("api_key", "your Quandl api key", " "),
                      
                      selectInput("dataSource",
                                  "Source",
@@ -63,7 +63,8 @@ QuandlyR <- function() {
       instrument <- toupper(gsub(" ", "", input$instrument, fixed = TRUE))
       ##insrumentList <- str_to_upper(gsub(" ", "", input$instrument, fixed = TRUE))
       ##insrumentList <- c(unlist(strsplit(insrumentList,",")))
-      Quandl.api_key(as.character(input$api_key))
+      ##if you think you'll use this more than 50 times per day, you'll need an api key
+      ##Quandl.api_key(as.character(input$api_key))
       
       inst <- paste(dataSource, instrument, sep="/")
       
