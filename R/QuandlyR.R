@@ -22,6 +22,8 @@ QuandlyR <- function() {
     miniTabstripPanel(
       miniTabPanel("Main",icon = icon("download"),
                    miniContentPanel(
+                     textInput("api_key", "your Quandl api key", " "),
+                     
                      selectInput("dataSource",
                                  "Source",
                                  choices = c("FRED", 
@@ -56,21 +58,23 @@ QuandlyR <- function() {
 
   #### 2 - SERVER
   server <- function(input, output, session) {
-??Quandl
     result <- reactive({
       dataSource <- toupper(gsub(" ", "", input$dataSource, fixed = TRUE))
       instrument <- toupper(gsub(" ", "", input$instrument, fixed = TRUE))
       ##insrumentList <- str_to_upper(gsub(" ", "", input$instrument, fixed = TRUE))
       ##insrumentList <- c(unlist(strsplit(insrumentList,",")))
-      #Quandl.api_key(d9EidiiDWoFESfdk5nPy)
-        inst <- paste(dataSource, instrument, sep="/")
-        data <- Quandl(inst,
+      Quandl.api_key(as.character(input$api_key))
+      
+      inst <- paste(dataSource, instrument, sep="/")
+      
+      data <- Quandl(inst,
                        start_date = format(input$dateRange[1]),
                        end_date = format(input$dateRange[2]),
                        #type = 'xts' 
                        collapse = as.character(input$frequency)
                        )
-        assign(inst, data, .GlobalEnv)
+      
+      assign(inst, data, .GlobalEnv)
     })
     observeEvent(input$run, {result()})
     observeEvent(input$close, {stopApp()})
