@@ -56,7 +56,7 @@ QuandlyR <- function() {
 
   #### 2 - SERVER
   server <- function(input, output, session) {
-
+??Quandl
     result <- reactive({
       dataSource <- toupper(gsub(" ", "", input$dataSource, fixed = TRUE))
       instrument <- toupper(gsub(" ", "", input$instrument, fixed = TRUE))
@@ -68,7 +68,7 @@ QuandlyR <- function() {
                        start_date = format(input$dateRange[1]),
                        end_date = format(input$dateRange[2]),
                        #type = 'xts' 
-                       frequency = as.character(input$frequency)
+                       collapse = as.character(input$frequency)
                        )
         assign(inst, data, .GlobalEnv)
     })
