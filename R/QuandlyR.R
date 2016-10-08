@@ -66,9 +66,9 @@ QuandlyR <- function() {
         inst <- paste(dataSource, instrument, sep="/")
         data <- Quandl(inst,
                        start_date = format(input$dateRange[1]),
-                       end_date = format(input$dateRange[2])
+                       end_date = format(input$dateRange[2]),
                        #type = 'xts' 
-                       #frequency = as.character(input$frequency)
+                       frequency = as.character(input$frequency)
                        )
         assign(inst, data, .GlobalEnv)
     })
