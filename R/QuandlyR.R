@@ -64,9 +64,9 @@ QuandlyR <- function() {
       ##insrumentList <- c(unlist(strsplit(insrumentList,",")))
       #Quandl.api_key(d9EidiiDWoFESfdk5nPy)
         inst <- paste(dataSource, instrument, sep="/")
-        data <- Quandl(inst
-                       #start_date = format(input$dateRange[1]),
-                       #end_date = format(input$dateRange[2]), 
+        data <- Quandl(inst,
+                       start_date = format(input$dateRange[1]),
+                       end_date = format(input$dateRange[2])
                        #type = 'xts' 
                        #frequency = as.character(input$frequency)
                        )
