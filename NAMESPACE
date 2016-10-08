@@ -5,5 +5,4 @@ import(miniUI)
 import(Quandl)
 import(shiny)
 import(stringr)
-import(xts)
-import(zoo)
+
