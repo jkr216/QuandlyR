@@ -26,10 +26,11 @@ QuandlyR <- function() {
                      
                      selectInput("dataSource",
                                  "Source",
-                                 choices = c("FRED", 
-                                             "WWDI", 
-                                             "FMAC", 
-                                             "BIS"),
+                                 choices = c("FRED", #fred data from federal reserve
+                                             "WWDI", # world bank
+                                             "FMAC", #freddie mac
+                                             "BIS",  #bank of intl settlements
+                                             "ODA"), #IMF
                                  selected = "FRED"),
                      
                      selectInput("frequency",
