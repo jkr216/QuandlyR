@@ -4,7 +4,7 @@
 #' @return Return either a csv file per instrument or a data frame. The csv file is stored in the working directory and the data frame in the globalenv.
 #' @title QuandlyR 
 #' @export 
-#' @import shiny miniUI xts zoo Quandl
+#' @import shiny miniUI stringr Quandl
 #' @seealso \code{Quandl}
 #' @seealso \code{shiny}
 
@@ -72,7 +72,7 @@ QuandlyR <- function() {
       data <- Quandl(inst,
                        start_date = format(input$dateRange[1]),
                        end_date = format(input$dateRange[2]),
-                       #type = 'xts' 
+                       order = "asc", 
                        collapse = as.character(input$frequency)
                        )
       
