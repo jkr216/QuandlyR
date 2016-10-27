@@ -30,7 +30,8 @@ QuandlyR <- function() {
                                              "WORLDBANK", # world bank
                                              "FMAC", #freddie mac
                                              "BIS",  #bank of intl settlements
-                                             "ODA"), #IMF
+                                             "ODA",  #IMF
+                                             "ISM"), #Inst of supply management
                                  selected = "FRED"),
                      
                      selectInput("frequency",
